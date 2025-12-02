@@ -2,19 +2,19 @@
 export default {
   bootstrap: () => import('./main.server.mjs').then(m => m.default),
   inlineCriticalCss: true,
-  baseHref: '/SST-CONSULTING-PORTAL',
+  baseHref: '/sst-consulting-portal/',
   locale: undefined,
   routes: [
   {
     "renderMode": 2,
-    "route": "/SST-CONSULTING-PORTAL"
+    "route": "/sst-consulting-portal"
   }
 ],
   entryPointToBrowserMapping: undefined,
   assets: {
-    'index.csr.html': {size: 5053, hash: '905e6444690142b1567b7e54903152d6d0ab5a75f0229e7767752e27b3992b5d', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
-    'index.server.html': {size: 976, hash: '8baa641f14847c963e8c6961721f368e57f60a6e3695916bacb3bd88f73f2539', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
-    'index.html': {size: 25080, hash: '5f013e588c03ad42feb77a64f744c062bcd87b76a2c550dfb16c688b7cb89dcd', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
+    'index.csr.html': {size: 5054, hash: '5ebdebd548dcffe7b4650e5f056e56fc6ba8cfba76d908a4656a1af43759253b', text: () => import('./assets-chunks/index_csr_html.mjs').then(m => m.default)},
+    'index.server.html': {size: 977, hash: 'beb466cfd69c8f95f689b253a1c54ce5268ea58d57056c2f93c2dea8bd5e533e', text: () => import('./assets-chunks/index_server_html.mjs').then(m => m.default)},
+    'index.html': {size: 25081, hash: 'e373a7320d4ca0b9131708abab5f268ccf31713a09dc8fb9fb9bc0ec857dcbf3', text: () => import('./assets-chunks/index_html.mjs').then(m => m.default)},
     'styles-KOCVEOV2.css': {size: 315667, hash: 'Cw/Mao3XZhQ', text: () => import('./assets-chunks/styles-KOCVEOV2_css.mjs').then(m => m.default)}
   },
 };

@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/SST-CONSULTING-PORTAL',
+  basePath: '/sst-consulting-portal',
   supportedLocales: {
   "en-US": ""
 },
