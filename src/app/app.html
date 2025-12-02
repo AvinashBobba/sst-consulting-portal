@@ -1,19 +1,185 @@
-<app-header (navigate)="scrollTo($event)"></app-header>
+<header class="top-nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <img src="assets/srisimha-logo.png" alt="Srisimha Tech logo" class="brand-logo" />
+      <span class="brand-text">SRISIMHA TECH</span>
+    </div>
+
+    <nav class="nav-links">
+      <a
+        class="nav-link"
+        [class.active]="activeSection === 'home'"
+        (click)="scrollTo('home')"
+      >
+        Home
+      </a>
+      <a
+        class="nav-link"
+        [class.active]="activeSection === 'about'"
+        (click)="scrollTo('about')"
+      >
+        About
+      </a>
+      <a
+        class="nav-link"
+        [class.active]="activeSection === 'services'"
+        (click)="scrollTo('services')"
+      >
+        Services
+      </a>
+      <a
+        class="nav-link"
+        [class.active]="activeSection === 'partners'"
+        (click)="scrollTo('partners')"
+      >
+        Partners
+      </a>
+      <a
+        class="nav-link"
+        [class.active]="activeSection === 'contact'"
+        (click)="scrollTo('contact')"
+      >
+        Contact
+      </a>
+    </nav>
+  </div>
+</header>
 
 <main>
-  <section id="home">
-    <app-home></app-home>
+  <!-- HOME / HERO -->
+  <section id="home" class="section hero-section">
+    <div class="container">
+      <h1>Your Trusted Partner for IT System Excellence</h1>
+      <p class="subtitle">
+        SRISIMHA TECH CONSULTANCY LLC helps businesses streamline, validate, and maintain
+        their IT systems with expert reviews, implementation, and training.
+      </p>
+      <button class="cta-btn" (click)="scrollTo('contact')">
+        Contact Us Today for a Free Consultation
+      </button>
+    </div>
   </section>
 
-  <section id="careers">
-    <app-careers></app-careers>
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Us</h2>
+      <h3>Who We Are</h3>
+      <p>
+        SRISIMHA TECH CONSULTANCY LLC is a U.S.-based IT consulting firm dedicated to delivering
+        reliable and compliant technology solutions. We specialize in system reviews,
+        implementation, validation, and training to ensure your business operates efficiently
+        and securely.
+      </p>
+
+      <h3>Our Mission</h3>
+      <p>
+        To empower businesses with robust IT systems that meet regulatory standards
+        and drive operational success.
+      </p>
+
+      <h3>Why Choose Us</h3>
+      <ul>
+        <li>Experienced consultants with industry expertise</li>
+        <li>Tailored solutions for your business needs</li>
+        <li>Commitment to quality and compliance</li>
+      </ul>
+    </div>
   </section>
 
-  <section id="about">
-    <app-about></app-about>
+  <!-- SERVICES -->
+  <section id="services" class="section section-alt">
+    <div class="container">
+      <h2>Services Offered</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Periodic Reviews for IT Computer Systems</h3>
+          <p>
+            We conduct regular audits to ensure your IT infrastructure remains secure,
+            compliant, and optimized for performance.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>IT Systems Implementation and Validation</h3>
+          <p>
+            From planning to deployment, we provide end-to-end support for implementing new
+            systems and validating them against industry standards.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>IT System Support</h3>
+          <p>
+            Our team offers comprehensive troubleshooting and maintenance services to keep
+            your systems running smoothly.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Training Material &amp; Training Videos</h3>
+          <p>
+            We create custom training resources and video tutorials to help your team
+            master new systems and processes.
+          </p>
+        </article>
+      </div>
+    </div>
   </section>
 
-  <section id="contact">
-    <app-contact></app-contact>
+  <!-- PARTNERS -->
+  <section id="partners" class="section">
+    <div class="container">
+      <h2>Partners</h2>
+      <p>
+        We collaborate with leading technology providers and industry experts to deliver
+        the best solutions for our clients.
+      </p>
+      <ul class="partner-list">
+        <li>MacroGenics</li>
+        <!-- Add more partners here later -->
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="contact-intro">
+        Ready to optimize your IT systems? Contact SRISIMHA TECH CONSULTANCY LLC today!
+      </p>
+
+      <div class="contact-grid">
+        <div>
+          <h3>Contact Details</h3>
+          <p><strong>Email:</strong> srisimha.techconsultancy@gmail.com</p>
+          <p><strong>Phone:</strong> +1 (510) 289-9724</p>
+          <p><strong>Address:</strong> 22226 Fulmer Ave, Clarksburg, Maryland – 20871, USA</p>
+        </div>
+
+        <form class="contact-form">
+          <h3>Enquiry Form</h3>
+          <div class="form-row">
+            <label>Name</label>
+            <input type="text" placeholder="Enter your name" />
+          </div>
+          <div class="form-row">
+            <label>Email</label>
+            <input type="email" placeholder="Enter email" />
+          </div>
+          <div class="form-row">
+            <label>Phone</label>
+            <input type="tel" placeholder="Enter mobile" />
+          </div>
+          <div class="form-row">
+            <label>Message</label>
+            <textarea rows="3" placeholder="How can SRISIMHA TECH CONSULTANCY LLC help you today?"></textarea>
+          </div>
+          <button type="button" class="cta-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
   </section>
 </main>

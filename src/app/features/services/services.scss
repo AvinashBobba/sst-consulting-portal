@@ -1,0 +1,16 @@
+.services-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 50, 0.1);
+    border-left: 4px solid #d4af37;
+    font-size: 1.1rem;
+  }
+}
+
+.text-gold {
+  color: #d4af37;
+}

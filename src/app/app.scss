@@ -1,6 +1,261 @@
+// Colors inspired by rich blue + gold theme
+$blue-deep: #0b1b3b;   // deep navy
+$gold-rich: #f5c04e;   // warm gold
+$text-light: #f5f7ff;
+$text-muted: #c7cbe0;
+$bg-alt: #f5f6fb;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+// ===== HEADER / NAVBAR =====
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, $blue-deep 0%, #061025 100%);
+  color: $text-light;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  height: 64px; // reduced height
+  display: flex;
+  align-items: center;
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+}
+
+.brand-text {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: $gold-rich;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  color: $text-light;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: $gold-rich;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover {
+  color: $gold-rich;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: $gold-rich;
+}
+
+// ===== LAYOUT =====
 main {
   display: block;
+  padding-top: 64px; // match header height so content is not hidden
 }
+
 section {
-  scroll-margin-top: 80px; // helps with fixed header
+  scroll-margin-top: 80px;
+}
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section-alt {
+  background: $bg-alt;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+// ===== TYPOGRAPHY =====
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: $blue-deep;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: $blue-deep;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: $blue-deep;
+}
+
+.subtitle {
+  max-width: 680px;
+  color: $text-muted;
+}
+
+// ===== HERO =====
+.hero-section {
+  background: radial-gradient(circle at top left, #213a78 0%, $blue-deep 45%, #020712 100%);
+  color: $text-light;
+}
+
+.hero-section h1 {
+  color: white;
+}
+
+.hero-section .subtitle {
+  color: #d9def5;
+}
+
+// ===== BUTTONS =====
+.cta-btn {
+  margin-top: 1.5rem;
+  background: $gold-rich;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+// ===== CARDS =====
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 18px rgba(6, 16, 37, 0.08);
+}
+
+// ===== PARTNERS =====
+.partner-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.partner-list li {
+  padding: 0.4rem 0;
+}
+
+// ===== CONTACT =====
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.contact-form {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 18px rgba(6, 16, 37, 0.08);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.9rem;
+}
+
+.form-row label {
+  font-size: 0.85rem;
+  color: $blue-deep;
+  margin-bottom: 0.25rem;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #c7cbe0;
+  font-size: 0.9rem;
+}
+
+// ===== RESPONSIVE =====
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    height: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  main {
+    padding-top: 86px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
