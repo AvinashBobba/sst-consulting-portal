@@ -259,3 +259,26 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+.partners-section {
+  text-align: center;
+
+  h2 {
+    color: #d4af37; /* Rich gold */
+    font-weight: 600;
+  }
+}
+
+.partner-logos {
+  margin-top: 20px;
+}
+
+.partner-logo {
+  max-width: 180px;
+  height: auto;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.4)); 
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}

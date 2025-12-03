@@ -20,6 +20,11 @@ export const routes: Routes = [
   {
     path: 'contact',
     loadComponent: () => import('./features/contact/contact').then(m => m.Contact)
-  },
+  },{
+  path: 'thank-you',
+  loadComponent: () =>
+    import('./features/thank-you/thank-you')
+      .then(m => m.ThankYou)
+},
   { path: '**', redirectTo: '' }
 ];

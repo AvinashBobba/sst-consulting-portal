@@ -1,28 +1,35 @@
-<section class="py-5 bg-light">
-  <div class="container">
-    <h2 class="mb-3">Contact Us</h2>
-    <p>
-      Ready to discuss your project? Reach out and we’ll get back within one business day.
-    </p>
+<form 
+  action="https://formsubmit.co/srisimha.techconsultancy@gmail.com" 
+  method="POST"
+>
 
-    <form class="row g-3">
-      <div class="col-md-6">
-        <label class="form-label">Name</label>
-        <input type="text" class="form-control" />
-      </div>
-      <div class="col-md-6">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" />
-      </div>
-      <div class="col-12">
-        <label class="form-label">Message</label>
-        <textarea class="form-control" rows="4"></textarea>
-      </div>
-      <div class="col-12">
-        <button type="button" class="btn btn-primary">
-          Send Message
-        </button>
-      </div>
-    </form>
+  <!-- Disable Captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Redirect to Home after success -->
+  <input type="hidden" name="_next" value="https://avinashbobba.github.io/sst-consulting-portal/#/contact">
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" required>
   </div>
-</section>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" class="form-control" name="email" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone</label>
+    <input type="text" class="form-control" name="phone">
+  </div>
+
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea class="form-control" name="message" rows="4" required></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">
+    Send Message
+  </button>
+</form>
