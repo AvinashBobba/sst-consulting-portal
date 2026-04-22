@@ -1,11 +1,35 @@
-<section class="partners-section container py-5">
-  <h2 class="text-center mb-4">Our Partners</h2>
+<section class="page-section page-hero">
+  <div class="container">
+    <div class="section-intro">
+      <p class="eyebrow">Partners</p>
+      <h1>Collaboration that strengthens delivery.</h1>
+      <p class="lead">{{ company.partnerIntro }}</p>
+    </div>
 
-  <div class="partner-logos d-flex justify-content-center align-items-center">
-    <img 
-      src="assets/partners/macroGenics.png"
-      alt="MacroGenics Logo"
-      class="partner-logo"
-    />
+    <div class="page-grid partner-grid">
+      @for (partner of partners; track partner.name) {
+        <article class="panel partner-card">
+          <img [src]="partner.logo" [alt]="partner.name + ' logo'" class="partner-logo" />
+          <div>
+            <h2>{{ partner.name }}</h2>
+            <p>{{ partner.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="page-section surface-section">
+  <div class="container">
+    <article class="panel collaboration-card">
+      <p class="eyebrow">Partner With Us</p>
+      <h2>Looking for a delivery partner that understands compliance?</h2>
+      <p>
+        We work well with platform providers, QA teams, and consulting partners who value clear
+        ownership, thoughtful validation, and strong collaboration.
+      </p>
+      <a class="btn btn-gold" routerLink="/contact">Discuss Collaboration</a>
+    </article>
   </div>
 </section>

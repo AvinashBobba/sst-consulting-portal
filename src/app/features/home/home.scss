@@ -1,0 +1,69 @@
+.home-hero {
+  background: radial-gradient(circle at top left, rgba(32, 58, 120, 0.16) 0%, transparent 48%);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.95fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metric-pill strong {
+  display: block;
+  color: #0b1b3b;
+  font-size: 1.15rem;
+}
+
+.metric-pill span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #5b6782;
+}
+
+.hero-panel {
+  padding: 1.75rem;
+}
+
+.service-preview-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 1.5rem;
+}
+
+.service-preview-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-eyebrow {
+  margin-bottom: 0.85rem;
+}
+
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .hero-grid,
+  .metrics-strip,
+  .service-preview-grid,
+  .spotlight-grid {
+    grid-template-columns: 1fr;
+  }
+}

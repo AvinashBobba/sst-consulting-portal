@@ -1,63 +1,34 @@
-<<<<<<< HEAD
-# sst-consulting-portal
-=======
-# SstConsultingPortal
+# SRISIMHA TECH Consulting Portal
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Angular marketing site for SRISIMHA TECH CONSULTANCY LLC.
 
-## Development server
+## Development
 
-To start a local development server, run:
+Run the local dev server:
 
 ```bash
-ng serve
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Build
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Create a production build:
 
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+The default local build output is written to `dist/sst-consulting-portal`.
+
+## Tests
+
+Run the unit test suite:
 
 ```bash
-ng generate --help
+npm test -- --watch=false
 ```
 
-## Building
+## GitHub Pages
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
->>>>>>> 0b9a135 (initial commit)
+Deployment is handled by GitHub Actions. On pushes to `main`, the workflow builds the app with the
+GitHub Pages base path and publishes the generated static site automatically.

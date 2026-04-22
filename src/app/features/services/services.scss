@@ -1,16 +1,28 @@
-.services-list {
-  list-style: none;
-  padding: 0;
-
-  li {
-    margin-bottom: 20px;
-    padding: 15px;
-    background: rgba(0, 0, 50, 0.1);
-    border-left: 4px solid #d4af37;
-    font-size: 1.1rem;
-  }
+.service-grid,
+.services-lower-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.text-gold {
-  color: #d4af37;
+.service-plate {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-plate h2 {
+  font-size: 1.45rem;
+}
+
+.compact-list {
+  margin: 1rem 0 1.5rem;
+}
+
+.card-eyebrow {
+  margin-bottom: 0.85rem;
+}
+
+@media (max-width: 960px) {
+  .service-grid,
+  .services-lower-grid {
+    grid-template-columns: 1fr;
+  }
 }

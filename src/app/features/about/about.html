@@ -1,14 +1,59 @@
-<section class="py-5">
+<section class="page-section page-hero">
+  <div class="container about-grid">
+    <div class="section-intro">
+      <p class="eyebrow">About Us</p>
+      <h1>Built to deliver reliable, compliant technology outcomes.</h1>
+      <p class="lead">{{ company.overview }}</p>
+    </div>
+
+    <aside class="panel mission-card">
+      <p class="eyebrow">Our Mission</p>
+      <h2>{{ company.mission }}</h2>
+      <a class="btn btn-outline" routerLink="/contact">Start a Conversation</a>
+    </aside>
+  </div>
+</section>
+
+<section class="page-section surface-section">
   <div class="container">
-    <h2 class="mb-3">About Us</h2>
-    <p>
-      SST Consulting is a boutique technology partner focused on building
-      long-term relationships with a select group of clients.
-    </p>
-    <ul>
-      <li>Headquartered in the US</li>
-      <li>Specialised in Angular & .NET enterprise apps</li>
-      <li>Cloud-native, security-first delivery</li>
-    </ul>
+    <div class="section-intro">
+      <p class="eyebrow">Why Choose Us</p>
+      <h2>Structured delivery without unnecessary complexity.</h2>
+    </div>
+
+    <div class="page-grid value-grid">
+      @for (card of valueCards; track card.title) {
+        <article class="panel">
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container about-detail-grid">
+    <article class="panel">
+      <p class="eyebrow">Functional Focus</p>
+      <h2>Support across regulated business functions.</h2>
+
+      <div class="chip-row">
+        @for (area of company.focusAreas; track area) {
+          <span class="chip">{{ area }}</span>
+        }
+      </div>
+    </article>
+
+    <article class="panel">
+      <p class="eyebrow">How We Work</p>
+      <h2>Pragmatic delivery principles.</h2>
+
+      <ul class="feature-list">
+        @for (item of company.operatingPrinciples; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </article>
   </div>
 </section>

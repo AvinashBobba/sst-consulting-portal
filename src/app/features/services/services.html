@@ -1,17 +1,59 @@
-<section class="container py-5">
-  <h2 class="text-center mb-4 text-gold">Services Offered</h2>
+<section class="page-section page-hero">
+  <div class="container">
+    <div class="section-intro">
+      <p class="eyebrow">Services</p>
+      <h1>Service lines designed for compliant change.</h1>
+      <p class="lead">
+        From periodic reviews to Veeva Vault programs, we support the full system lifecycle with
+        flexible delivery options for regulated teams.
+      </p>
+    </div>
 
-  <ul class="services-list">
-    <li><strong>Periodic Reviews for IT Computer Systems</strong><br>
-      We conduct regular audits to ensure IT systems remain secure, compliant, and optimized for performance.</li>
+    <div class="page-grid service-grid">
+      @for (service of services; track service.id) {
+        <a class="panel interactive-card service-plate" [routerLink]="['/services', service.id]">
+          @if (service.eyebrow) {
+            <p class="eyebrow card-eyebrow">{{ service.eyebrow }}</p>
+          }
 
-    <li><strong>IT Systems Implementation & Validation</strong><br>
-      Full lifecycle support for implementing and validating systems against regulatory standards.</li>
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.summary }}</p>
 
-    <li><strong>IT System Support</strong><br>
-      Troubleshooting, maintenance, and continuous monitoring to ensure uptime and efficiency.</li>
+          <ul class="feature-list compact-list">
+            @for (item of service.highlights; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
 
-    <li><strong>Training Material & Videos</strong><br>
-      Customized documentation, SOPs, and training videos for internal business use.</li>
-  </ul>
+          <span class="text-link">Open service brief</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="page-section surface-section">
+  <div class="container services-lower-grid">
+    <article class="panel">
+      <p class="eyebrow">Engagement Models</p>
+      <h2>Flexible ways to work together.</h2>
+
+      <ul class="feature-list">
+        @for (item of engagementModels; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </article>
+
+    <article class="panel">
+      <p class="eyebrow">Delivery Approach</p>
+      <h2>Inspection-ready, pragmatic execution.</h2>
+
+      <ul class="feature-list">
+        @for (item of deliveryPrinciples; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </article>
+  </div>
 </section>

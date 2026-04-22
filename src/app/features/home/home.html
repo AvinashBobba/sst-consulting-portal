@@ -1,5 +1,92 @@
-<section class="hero-section text-center">
-  <h1 class="text-gold">Your Trusted Partner for IT System Excellence</h1>
-  <p class="lead">We help businesses streamline, validate, and maintain IT systems.</p>
-  <a routerLink="/contact" class="btn btn-warning mt-3">Contact Us Today</a>
+<section class="page-section page-hero home-hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">IT Consulting for Regulated Environments</p>
+      <h1>{{ company.tagline }}</h1>
+      <p class="lead">{{ company.heroSummary }}</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" routerLink="/services">Explore Services</a>
+        <a class="btn btn-outline" routerLink="/contact">Free Consultation</a>
+      </div>
+
+      <div class="metrics-strip">
+        @for (metric of company.metrics; track metric.label) {
+          <article class="metric-pill">
+            <strong>{{ metric.value }}</strong>
+            <span>{{ metric.label }}</span>
+          </article>
+        }
+      </div>
+    </div>
+
+    <aside class="panel hero-panel">
+      <p class="eyebrow">Why Clients Choose Us</p>
+      <h2>Compliance-minded delivery with practical execution.</h2>
+
+      <ul class="feature-list">
+        @for (item of company.operatingPrinciples; track item) {
+          <li>{{ item }}</li>
+        }
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="page-section">
+  <div class="container">
+    <div class="section-intro">
+      <p class="eyebrow">Featured Services</p>
+      <h2>Support across implementation, validation, support, and adoption.</h2>
+      <p class="lead">
+        Explore the service lines most frequently used by regulated teams building or optimizing
+        business-critical platforms.
+      </p>
+    </div>
+
+    <div class="page-grid service-preview-grid">
+      @for (service of featuredServices; track service.id) {
+        <a class="panel interactive-card service-preview-card" [routerLink]="['/services', service.id]">
+          @if (service.eyebrow) {
+            <p class="eyebrow card-eyebrow">{{ service.eyebrow }}</p>
+          }
+
+          <h3>{{ service.title }}</h3>
+          <p>{{ service.summary }}</p>
+          <span class="text-link">View service brief</span>
+        </a>
+      }
+    </div>
+
+    <a class="text-link" routerLink="/services">Browse the full service portfolio</a>
+  </div>
+</section>
+
+<section class="page-section surface-section">
+  <div class="container spotlight-grid">
+    <div>
+      <p class="eyebrow">Featured Capability</p>
+      <h2>{{ spotlightService.title }}</h2>
+      <p class="lead">{{ spotlightService.detailIntro }}</p>
+
+      <ul class="feature-list">
+        @for (point of spotlightService.highlights; track point) {
+          <li>{{ point }}</li>
+        }
+      </ul>
+
+      <a class="btn btn-gold" [routerLink]="['/services', spotlightService.id]">
+        Open Veeva Vault Service Brief
+      </a>
+    </div>
+
+    <div class="page-grid capability-grid">
+      @for (card of capabilityCards; track card.title) {
+        <article class="panel capability-card">
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.text }}</p>
+        </article>
+      }
+    </div>
+  </div>
 </section>

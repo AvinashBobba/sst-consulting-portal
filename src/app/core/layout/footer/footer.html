@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <p class="eyebrow">SRISIMHA TECH</p>
+      <h2>{{ company.legalName }}</h2>
+      <p>{{ company.heroSummary }}</p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        @for (link of navLinks; track link.path) {
+          <li><a [routerLink]="link.path">{{ link.label }}</a></li>
+        }
+      </ul>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <ul class="footer-links">
+        <li><a [href]="company.website" target="_blank" rel="noreferrer">Website</a></li>
+        <li><a href="mailto:srisimha.techconsultancy@gmail.com">srisimha.techconsultancy@gmail.com</a></li>
+        <li><a href="tel:+15102899724">+1 (510) 289-9724</a></li>
+        <li>{{ company.address }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>&copy; 2026 {{ company.legalName }}. All rights reserved.</span>
+  </div>
+</footer>

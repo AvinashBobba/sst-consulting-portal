@@ -1,35 +1,104 @@
-<form 
-  action="https://formsubmit.co/srisimha.techconsultancy@gmail.com" 
-  method="POST"
->
+<section class="page-section page-hero contact-page">
+  <div class="container">
+    <div class="section-intro contact-intro">
+      <p class="eyebrow">Contact</p>
+      <h1>Let's build the right delivery model for your team.</h1>
+      <p class="lead">
+        Ready to optimize your IT systems? Contact {{ company.legalName }} today and tell us about
+        your current program, validation need, or support model.
+      </p>
+    </div>
 
-  <!-- Disable Captcha -->
-  <input type="hidden" name="_captcha" value="false">
+    <div class="contact-layout">
+      <div class="contact-content">
+        <article class="panel contact-overview">
+          <p class="eyebrow">Ways to Reach Us</p>
+          <h2>Choose the fastest path for your team.</h2>
+          <p>
+            Use one of the direct contact channels below for quick outreach, or jump straight into
+            the inquiry form for a more detailed request.
+          </p>
+        </article>
 
-  <!-- Redirect to Home after success -->
-  <input type="hidden" name="_next" value="https://avinashbobba.github.io/sst-consulting-portal/#/contact">
+        <div class="page-grid contact-card-grid">
+          @for (channel of company.contactChannels; track channel.label) {
+            <a
+              class="panel interactive-card contact-card"
+              [href]="channel.href"
+              [attr.target]="isExternal(channel.href) ? '_blank' : null"
+              [attr.rel]="isExternal(channel.href) ? 'noreferrer' : null"
+            >
+              <span class="contact-label">{{ channel.label }}</span>
+              <strong>{{ channel.value }}</strong>
 
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" name="name" required>
+              @if (channel.note) {
+                <p>{{ channel.note }}</p>
+              }
+            </a>
+          }
+        </div>
+
+        <article class="panel office-card">
+          <p class="eyebrow">Delivery Models</p>
+          <h2>Engage the way your team needs.</h2>
+
+          <ul class="feature-list">
+            @for (item of engagementModels; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+
+          <p class="office-address">{{ company.address }}</p>
+        </article>
+      </div>
+
+      <div id="inquiry-form" class="panel form-shell">
+        <p class="eyebrow">Inquiry Form</p>
+        <h2>Tell us how we can help.</h2>
+        <p class="form-intro">
+          Share your current program, platform, or validation objectives and we will follow up with
+          the right engagement approach.
+        </p>
+
+        <form
+          action="https://formsubmit.co/srisimha.techconsultancy@gmail.com"
+          method="POST"
+          class="contact-form"
+        >
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" [value]="thankYouUrl" />
+
+          <div class="form-grid">
+            <div class="field-row">
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" required />
+            </div>
+
+            <div class="field-row">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" required />
+            </div>
+
+            <div class="field-row form-field-full">
+              <label for="phone">Phone</label>
+              <input id="phone" type="text" name="phone" />
+            </div>
+
+            <div class="field-row form-field-full">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                placeholder="How can SRISIMHA TECH CONSULTANCY LLC help you today?"
+              ></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gold submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
   </div>
-
-  <div class="mb-3">
-    <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control" name="email" required>
-  </div>
-
-  <div class="mb-3">
-    <label for="phone" class="form-label">Phone</label>
-    <input type="text" class="form-control" name="phone">
-  </div>
-
-  <div class="mb-3">
-    <label for="message" class="form-label">Message</label>
-    <textarea class="form-control" name="message" rows="4" required></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">
-    Send Message
-  </button>
-</form>
+</section>

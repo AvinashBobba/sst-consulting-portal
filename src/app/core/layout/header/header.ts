@@ -1,15 +1,28 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+
+import { navLinks } from '../../../shared/content/site-content';
 
 @Component({
   selector: 'app-header',
-   standalone: true,
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './header.html',
-  styleUrl: './header.scss',
+  styleUrl: './header.scss'
 })
 export class Header {
-  @Output() navigate = new EventEmitter<string>();
+  readonly navLinks = navLinks;
+  menuOpen = false;
 
-  onNavClick(sectionId: string) {
-    this.navigate.emit(sectionId);
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
+  isExact(path: string) {
+    return path === '/';
   }
 }

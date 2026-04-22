@@ -1,0 +1,73 @@
+<section class="page-section page-hero">
+  <div class="container">
+    <a class="crumb-link" routerLink="/services">Back to Services</a>
+
+    @if (service().eyebrow) {
+      <p class="eyebrow">{{ service().eyebrow }}</p>
+    }
+
+    <div class="section-intro">
+      <h1>{{ service().title }}</h1>
+      <p class="lead">{{ service().detailIntro }}</p>
+    </div>
+
+    <div class="page-grid service-highlight-grid">
+      @for (highlight of service().highlights; track highlight) {
+        <article class="panel mini-panel">
+          <p>{{ highlight }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="page-section surface-section">
+  <div class="container detail-layout">
+    <div class="detail-main">
+      <div class="page-grid detail-grid">
+        @for (section of service().sections; track section.title) {
+          <article class="panel detail-card">
+            <h2>{{ section.title }}</h2>
+
+            @if (section.intro) {
+              <p>{{ section.intro }}</p>
+            }
+
+            @if (section.bullets?.length) {
+              <ul class="feature-list">
+                @for (item of section.bullets; track item) {
+                  <li>{{ item }}</li>
+                }
+              </ul>
+            }
+          </article>
+        }
+      </div>
+    </div>
+
+    <aside class="panel detail-sidebar">
+      <h2>Explore More Services</h2>
+      <div class="sidebar-links">
+        @for (item of services; track item.id) {
+          <a
+            class="sidebar-link"
+            [class.is-active]="item.id === service().id"
+            [routerLink]="['/services', item.id]"
+          >
+            <strong>{{ item.title }}</strong>
+            <span>{{ item.summary }}</span>
+          </a>
+        }
+      </div>
+
+      <div class="sidebar-cta">
+        <h3>Need a tailored delivery model?</h3>
+        <p>
+          We can support project delivery, validation-only work, managed services, or staff
+          augmentation.
+        </p>
+        <a class="btn btn-gold" routerLink="/contact">Talk to Our Team</a>
+      </div>
+    </aside>
+  </div>
+</section>
