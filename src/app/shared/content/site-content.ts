@@ -85,18 +85,18 @@ export const companyProfile = {
     },
     {
       label: 'Operations Email',
-      value: 'operations@sstechconsulting-us.com',
-      href: 'mailto:operations@sstechconsulting-us.com'
+      value: 'operations@sstechconsulting.com',
+      href: 'mailto:operations@sstechconsulting.com'
     },
     {
       label: 'Business Email',
-      value: 'lalitha.bobba@sstechconsulting-us.com',
-      href: 'mailto:lalitha.bobba@sstechconsulting-us.com'
+      value: 'admin@sstechconsulting.com',
+      href: 'mailto:admin@sstechconsulting.com'
     },
     {
       label: 'Inquiry Inbox',
-      value: 'srisimha.techconsultancy@gmail.com',
-      href: 'mailto:srisimha.techconsultancy@gmail.com',
+      value: 'info@sstechconsulting.com',
+      href: 'mailto:info@sstechconsulting.com',
       note: 'Primary inbox used by the website contact form'
     },
     {
