@@ -12,7 +12,7 @@ import { companyProfile } from '../../shared/content/site-content';
 export class Contact {
   readonly company = companyProfile;
   readonly engagementModels = companyProfile.engagementModels;
-  readonly thankYouUrl = 'https://avinashbobba.github.io/sst-consulting-portal/thank-you';
+  readonly thankYouUrl = '/thank-you';
 
   isExternal(href: string) {
     return href.startsWith('http');
