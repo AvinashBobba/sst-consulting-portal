@@ -386,12 +386,6 @@ export const partners: PartnerItem[] = [
     logo: 'assets/partners/macroGenics.png',
     description:
       'A trusted client and partner relationship supporting regulated technology delivery in the life sciences space.'
-  },
-  {
-    name: 'Veeva',
-    logo: 'assets/partners/veeva.png',
-    description:
-      'A strategic platform ecosystem aligned with our Veeva Vault consulting, document management, and validation service offerings.'
   }
 ];
 
