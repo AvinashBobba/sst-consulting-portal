@@ -12,7 +12,8 @@ import { companyProfile } from '../../shared/content/site-content';
 export class Contact {
   readonly company = companyProfile;
   readonly engagementModels = companyProfile.engagementModels;
-  readonly thankYouUrl = '/thank-you';
+  readonly thankYouUrl = `${companyProfile.website}thank-you`;
+  readonly formUrl = `${companyProfile.website}contact`;
 
   isExternal(href: string) {
     return href.startsWith('http');

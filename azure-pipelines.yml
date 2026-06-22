@@ -31,19 +31,19 @@ steps:
 
   - script: |
       set -euo pipefail
-      test -f dist/sst-consulting-portal/browser/index.html
-      test -f dist/sst-consulting-portal/browser/staticwebapp.config.json
-      test "$(find dist/sst-consulting-portal/browser -maxdepth 1 -name '*.js' | wc -l)" -gt 0
-      test "$(find dist/sst-consulting-portal/browser -maxdepth 1 -name '*.css' | wc -l)" -gt 0
+      test -f dist/sst-consulting-portal/index.html
+      test -f dist/sst-consulting-portal/staticwebapp.config.json
+      test "$(find dist/sst-consulting-portal -maxdepth 1 -name '*.js' | wc -l)" -gt 0
+      test "$(find dist/sst-consulting-portal -maxdepth 1 -name '*.css' | wc -l)" -gt 0
     displayName: Verify deploy artifact
 
   - task: AzureStaticWebApp@0
     displayName: Deploy Azure Static Web App
     inputs:
-      app_location: 'dist/sst-consulting-portal/browser'
+      app_location: 'dist/sst-consulting-portal'
       output_location: ''
       skip_app_build: true
       skip_api_build: true
-      config_file_location: 'dist/sst-consulting-portal/browser'
+      config_file_location: 'dist/sst-consulting-portal'
       azure_static_web_apps_api_token: $(azure_static_web_apps_api_token)
       production_branch: 'main'

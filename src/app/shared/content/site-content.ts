@@ -75,13 +75,13 @@ export const companyProfile = {
     'Managed services and post-go-live support',
     'Staff augmentation with Veeva-experienced consultants'
   ],
-  website: 'https://www.sstechconsulting-us.com',
+  website: 'https://www.sstechconsulting.com/',
   address: '22226 Fulmer Ave, Clarksburg, Maryland 20871, USA',
   contactChannels: [
     {
       label: 'Website',
-      value: 'www.sstechconsulting-us.com',
-      href: 'https://www.sstechconsulting-us.com'
+      value: 'www.sstechconsulting.com',
+      href: 'https://www.sstechconsulting.com/'
     },
     {
       label: 'Operations Email',

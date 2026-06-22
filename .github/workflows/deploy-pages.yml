@@ -33,12 +33,12 @@ jobs:
         run: npm ci
 
       - name: Build site
-        run: npm run build -- --base-href /sst-consulting-portal/
+        run: npm run build
 
       - name: Add SPA fallback
         run: |
-          cp dist/sst-consulting-portal/browser/index.html dist/sst-consulting-portal/browser/404.html
-          touch dist/sst-consulting-portal/browser/.nojekyll
+          cp dist/sst-consulting-portal/index.html dist/sst-consulting-portal/404.html
+          touch dist/sst-consulting-portal/.nojekyll
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -46,7 +46,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/sst-consulting-portal/browser
+          path: dist/sst-consulting-portal
 
   deploy:
     environment:

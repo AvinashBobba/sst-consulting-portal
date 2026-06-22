@@ -18,7 +18,8 @@ Create a production build:
 npm run build
 ```
 
-The default local build output is written to `dist/sst-consulting-portal`.
+The deployable static site is written directly to `dist/sst-consulting-portal`. Use that folder as
+the Azure Static Web Apps app artifact for manual deployments.
 
 ## Tests
 
@@ -28,7 +29,7 @@ Run the unit test suite:
 npm test -- --watch=false
 ```
 
-## GitHub Pages
+## Deployment
 
-Deployment is handled by GitHub Actions. On pushes to `main`, the workflow builds the app with the
-GitHub Pages base path and publishes the generated static site automatically.
+Deployment is handled by Azure Static Web Apps. On pushes to `main`, the Azure pipeline builds the
+app, verifies the deploy artifact, and uploads `dist/sst-consulting-portal`.
