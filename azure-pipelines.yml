@@ -27,7 +27,7 @@ steps:
     displayName: Deploy Azure Static Web App
     inputs:
       app_location: '/'
-      output_location: ''
+      output_location: 'dist/sst-consulting-portal'
       skip_api_build: true
       azure_static_web_apps_api_token: $(azure_static_web_apps_api_token)
       production_branch: 'main'
