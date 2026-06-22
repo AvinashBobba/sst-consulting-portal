@@ -8,10 +8,5 @@
       "route": "/thank-you",
       "rewrite": "/index.html"
     }
-  ],
-  "responseOverrides": {
-    "404": {
-      "rewrite": "/index.html"
-    }
-  }
+  ]
 }
