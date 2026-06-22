@@ -40,8 +40,8 @@ steps:
   - task: AzureStaticWebApp@0
     displayName: Deploy Azure Static Web App
     inputs:
-      app_location: '/'
-      output_location: 'dist/sst-consulting-portal'
+      app_location: 'dist/sst-consulting-portal'
+      output_location: ''
       skip_app_build: true
       skip_api_build: true
       config_file_location: 'dist/sst-consulting-portal'
