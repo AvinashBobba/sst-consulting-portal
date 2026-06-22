@@ -30,7 +30,8 @@ npm test -- --watch=false
 
 ## Deployment
 
-Deployment is handled by GitHub Pages. On pushes to `main`, the GitHub Actions workflow builds the
-app, adds the single-page app fallback, and publishes `dist/sst-consulting-portal`.
+Deployment is handled by Azure Static Web Apps. On pushes to `main`, the Azure pipeline builds the
+app, verifies the deploy artifact, and uploads `dist/sst-consulting-portal`.
 
-The custom domain is configured by `public/CNAME` and should point to GitHub Pages in DNS.
+For manual Azure Static Web Apps deployment, upload `dist/sst-consulting-portal` after running
+`npm run build`.
