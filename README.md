@@ -30,8 +30,16 @@ npm test -- --watch=false
 
 ## Deployment
 
-Deployment is handled by Azure Static Web Apps. On pushes to `main`, the Azure pipeline builds the
-app, verifies the deploy artifact, and uploads `dist/sst-consulting-portal`.
+Deployment should be handled by Cloudflare Pages.
 
-For manual Azure Static Web Apps deployment, upload `dist/sst-consulting-portal` after running
-`npm run build`.
+Use these Cloudflare Pages build settings:
+
+```text
+Framework preset: None
+Build command: npm ci && npm run build
+Build output directory: dist/sst-consulting-portal
+Node.js version: 20.20.2
+```
+
+Cloudflare Pages reads `public/_redirects` for the Angular single-page app fallback and
+`public/_headers` for cache/security headers.
